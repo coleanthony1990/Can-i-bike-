@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Graphs from './containers/Graphs';
 
 function App() {
+const [data, setData] = useState([])
+const [error, setError] = useState([])
+
+const getData = (location) => {
+  return fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=4W7R6KHFXTA5YECCKYQH63LN5`)
+          .then(res => res.json())
+          .then(res => setData(res))
+          .catch(error => setError(
+        'There was a problem loading your data. Please try again.',
+        error
+      )
+    );
+}
+
+const ifData = data ? data : null
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header getData={getData}/>
+      {data && <Graphs data={ifData} error={error}/>}
     </div>
   );
 }
