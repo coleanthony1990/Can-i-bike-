@@ -6,13 +6,17 @@ import nobike from '../assets/nobike.png'
 const Day = ({high, conditions, date, icon}) => {
   const bikeDecision = high > 40 
   && (!conditions.includes('Snow') 
-  || !conditions.includes('Rain')) 
+  || !conditions.includes('Rain') 
+  || conditions.includes('Wind') )
   ? bike : nobike
-  console.log(!conditions.includes('Snow') || conditions.includes('Rain'))
+
+
+  
+  
   return (
     <div className='weather-card'>
       <h3>{date}</h3>
-      <p>{high} and {conditions}</p>
+      <p>high of {high} and {conditions}</p>
       <img src={bikeDecision} alt='somethin'/>
     </div>
   )
