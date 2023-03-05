@@ -53,6 +53,10 @@ const BarGraph = ({data}) => {
               fill: 'orange'
             }
           }}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 1000 }
+          }}
           />
           <VictoryCandlestick
           // candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
@@ -61,6 +65,10 @@ const BarGraph = ({data}) => {
             data: {
               fill: 'lightblue'
             }
+          }}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 1000 }
           }}
           />
       
