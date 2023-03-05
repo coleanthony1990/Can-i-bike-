@@ -6,7 +6,8 @@ import '../styles/WeatherCards.css'
 const Graphs = ({data}) => {
   return (
     <div className='weather-page'>
-      <TempGraph data={data}/>
+      {data.resolvedAddress}
+      <TempGraph data={data} />
     </div>
   )
 }
