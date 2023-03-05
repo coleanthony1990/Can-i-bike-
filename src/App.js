@@ -43,12 +43,10 @@ const getData = (location) => {
       )
     );
 }
-
-const ifData = data ? data : null
   return (
     <div className="App">
       <Header getData={getData}/>
-      <Graphs data={data} error={error}/>
+      <Graphs data={data} error={error} />
     </div>
   );
 }
