@@ -19,18 +19,18 @@ useEffect(() => {
 console.log(userLocation)
 console.log(data)
 
-// useEffect(() => {
-//   if (userLocation) {
-//    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation.latitude},${userLocation.longitude}?key=4W7R6KHFXTA5YECCKYQH63LN5`)
-//           .then(res => res.json())
-//           .then(res => setData(res))
-//           .catch(error => setError(
-//         'There was a problem loading your data. Please try again.',
-//         error
-//       )
-//     );
-//   }
-// }, [userLocation])
+useEffect(() => {
+  if (userLocation) {
+   fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation.latitude},${userLocation.longitude}?key=4W7R6KHFXTA5YECCKYQH63LN5`)
+          .then(res => res.json())
+          .then(res => setData(res))
+          .catch(error => setError(
+        'There was a problem loading your data. Please try again.',
+        error
+      )
+    );
+  }
+}, [userLocation])
 
 
 const getData = (location) => {
