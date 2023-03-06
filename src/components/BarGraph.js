@@ -61,7 +61,7 @@ const BarGraph = ({ data }) => {
           }}
           animate={{
             duration: 1000,
-            onLoad: { duration: 1000 },
+            onLoad: { duration: 500 },
           }}
         />
         <VictoryCandlestick
@@ -74,7 +74,7 @@ const BarGraph = ({ data }) => {
           }}
           animate={{
             duration: 1000,
-            onLoad: { duration: 1000 },
+            onLoad: { duration: 500 },
           }}
         />
       </VictoryChart>
