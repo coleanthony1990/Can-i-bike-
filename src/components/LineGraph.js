@@ -23,14 +23,14 @@ console.log(tempData)
   return (
     <div>
       <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 1, y: 20 }}>
-      <VictoryAxis dependentAxis tickFormat={(y) => `${y}\u00B0F`} />
+        <VictoryAxis dependentAxis tickFormat={(y) => `${y}\u00B0F`} />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
         />
-      <VictoryLine
-      data={tempData}
-      />
+        <VictoryLine
+        data={tempData}
+        />
       </VictoryChart>
     </div>
   )
