@@ -3,6 +3,7 @@ import Day from './Day'
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel, VictoryTheme, VictoryStack } from 'victory';
 import '../styles/WeatherCards.css'
 import BarGraph from './BarGraph';
+import WindGraph from './WindGraph';
 
 
 const TempGraph = ({data}) => {
@@ -30,8 +31,10 @@ const TempGraph = ({data}) => {
   
   return (
     <div className='data-stuff'>
-      <div className='barChart'>
+      <div className='chartsContainer'>
       <BarGraph data={data}/>
+      <WindGraph data={data}/>
+      
       </div>
       <div className='card-container'>
       {days}
