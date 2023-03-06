@@ -30,6 +30,10 @@ console.log(tempData)
         />
         <VictoryLine
         data={tempData}
+        animate={{
+          duration: 2000,
+          onLoad: { duration: 1000 }
+        }}
         />
       </VictoryChart>
     </div>
