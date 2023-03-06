@@ -5,14 +5,31 @@
 }
 .weather-card {
   border: 1px solid black;
-  width: 30rem;
+  width: 20rem;
   margin: 10px;
 }
-.data-stuff {
+.chartsContainer {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
 }
-.barChart {
-  width: 40rem;
+
+.high {
+  border: 1px solid black;
+  background-color: orange;
+  width: 3rem;
+}
+.low {
+  border: 1px solid black;
+  background-color: lightblue;
+  width: 3rem;
+}
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -50px;
+}
+.wind {
+  margin-bottom: -20px;
 }

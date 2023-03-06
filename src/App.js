@@ -7,17 +7,15 @@ import Graphs from './containers/Graphs';
 function App() {
 const [data, setData] = useState([])
 const [error, setError] = useState([])
-const todayDate = new Date().toLocaleDateString()
 const [userLocation, setUserLocation] = useState({})
-console.log(todayDate)
+
 
 useEffect(() => {
   navigator.geolocation.getCurrentPosition(function(position) {
     setUserLocation(position.coords)
   });
 }, [])
-console.log(userLocation)
-console.log(data)
+
 
 useEffect(() => {
   if (userLocation) {
