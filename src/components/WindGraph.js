@@ -42,15 +42,15 @@ const WindGraph = ({ data }) => {
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
         />
 
-        <VictoryBar
+        {data.length !== 0 && <VictoryBar
           data={windData}
           x="time"
           y="windSpeed"
-          // animate={{
-          //   duration: 1000,
-          //   onLoad: { duration: 1000 }
-          // }}
-        />
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 1000 }
+          }}
+        />}
       </VictoryChart>
     </div>
   );
