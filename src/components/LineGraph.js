@@ -28,13 +28,13 @@ console.log(tempData)
           tickValues={[4, 8, 12, 16, 20]}
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
         />
-        <VictoryLine
+        {data.length !== 0 && <VictoryLine
         data={tempData}
         animate={{
           duration: 2000,
           onLoad: { duration: 1000 }
         }}
-        />
+        />}
       </VictoryChart>
     </div>
   )
