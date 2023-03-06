@@ -35,7 +35,7 @@ const WindGraph = ({ data }) => {
     <div>
       <p className="wind">Wind on {today}</p>
 
-      <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5 }}>
+      <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
         <VictoryAxis dependentAxis tickFormat={(y) => `${y}mph`} />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
