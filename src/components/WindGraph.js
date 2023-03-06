@@ -46,10 +46,10 @@ const WindGraph = ({ data }) => {
           data={windData}
           x="time"
           y="windSpeed"
-          // animate={{
-          //   duration: 1000,
-          //   onLoad: { duration: 1000 }
-          // }}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 1000 }
+          }}
         />
       </VictoryChart>
     </div>
