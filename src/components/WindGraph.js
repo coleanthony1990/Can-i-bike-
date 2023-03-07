@@ -41,6 +41,9 @@ const WindGraph = ({ data }) => {
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
+          style={{
+            grid: { strokeWidth: 0.0 },
+          }}
         />
 
         {data.length !== 0 && <VictoryBar

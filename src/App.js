@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState([]);
 
   const [userLocation, setUserLocation] = useState({});
+  console.log(userLocation)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {

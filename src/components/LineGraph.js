@@ -37,9 +37,6 @@ const LineGraph = ({ data }) => {
         theme={VictoryTheme.material}
         domainPadding={{ x: 1, y: 20 }}
         style={{
-          parent: {
-            border: "1px solid #ccc",
-          },
           background: {
             fill: "lightyellow",
           },
