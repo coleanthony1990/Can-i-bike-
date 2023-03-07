@@ -32,8 +32,8 @@ const LineGraph = ({ data }) => {
   console.log(tempData);
   return (
     <div>
-      <p>High on {today}</p>
-      <VictoryChart
+        {data.length !== 0 && <p>High on {today}</p>}
+        {data.length !== 0 && <VictoryChart
         theme={VictoryTheme.material}
         domainPadding={{ x: 1, y: 20 }}
         style={{
@@ -68,7 +68,7 @@ const LineGraph = ({ data }) => {
             }}
           />
         )}
-      </VictoryChart>
+      </VictoryChart>}
     </div>
   );
 };

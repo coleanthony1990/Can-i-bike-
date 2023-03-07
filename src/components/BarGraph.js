@@ -41,12 +41,12 @@ const BarGraph = ({ data }) => {
 
   return (
     <div>
-      <p>Next 15 days</p>
-      <div className="legend">
+     {data.length !== 0 &&  <p>Next 15 days</p>}
+     {data.length !== 0 && <div className="legend">
         <p className="high">high</p>
         <p className="low">low</p>
-      </div>
-      <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
+      </div>}
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
         <VictoryAxis tickLabelComponent={<VictoryLabel angle={55} domainPadding={10}/>} style={{
             grid: {strokeWidth: 0.0 },
           }}/>
@@ -86,7 +86,7 @@ const BarGraph = ({ data }) => {
             onLoad: { duration: 500 },
           }}
         />
-      </VictoryChart>
+      </VictoryChart>}
     </div>
   );
 };

@@ -34,9 +34,9 @@ const WindGraph = ({ data }) => {
 
   return (
     <div>
-      <p className="wind">Wind on {today}</p>
+      {data.length !== 0 && <p className="wind">Wind on {today}</p>}
 
-      <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
         <VictoryAxis dependentAxis tickFormat={(y) => `${y}mph`} />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
@@ -52,7 +52,7 @@ const WindGraph = ({ data }) => {
             onLoad: { duration: 1000 }
           }}
         />}
-      </VictoryChart>
+      </VictoryChart>}
     </div>
   );
 };
