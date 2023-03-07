@@ -3,7 +3,7 @@ import {
   VictoryChart,
   VictoryBar,
   VictoryAxis,
-  VictoryLabel,
+  
   VictoryTheme,
 } from "victory";
 
@@ -14,11 +14,12 @@ const WindGraph = ({ data }) => {
     month: "long",
     day: "numeric",
   };
-  const todayDate = data.length !== 0 ? new Date(data.days[0].datetime) : null;
   const today =
     data.length !== 0
-      ? todayDate.toLocaleDateString("en-US", options)
+      ? new Date(data.days[1].datetime).toLocaleDateString("en-US", options)
       : "Loading";
+
+      console.log(new Date('2023-03-06').toLocaleString('en-US', { timeZone: 'UTC' }))
 
   const windData =
     data.length !== 0

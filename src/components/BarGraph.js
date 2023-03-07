@@ -8,6 +8,8 @@ import {
 } from "victory";
 
 const BarGraph = ({ data }) => {
+
+  
   const lowDataCandle =
     data.length !== 0
       ? data.days.reduce((acc, day) => {
@@ -39,16 +41,20 @@ const BarGraph = ({ data }) => {
 
   return (
     <div>
+      <p>Next 15 days</p>
       <div className="legend">
         <p className="high">high</p>
         <p className="low">low</p>
       </div>
       <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
-        <VictoryAxis tickLabelComponent={<VictoryLabel angle={45} />} />
+        <VictoryAxis tickLabelComponent={<VictoryLabel angle={55} domainPadding={10}/>} style={{
+            grid: {strokeWidth: 0.0 },
+          }}/>
         <VictoryAxis
           dependentAxis
           // tickFormat specifies how ticks should be displayed
           tickFormat={(x) => `${x}\u00B0F`}
+          
         />
 
         <VictoryCandlestick
@@ -57,7 +63,9 @@ const BarGraph = ({ data }) => {
           style={{
             data: {
               fill: "orange",
+              strokeWidth: '0'
             },
+            
           }}
           animate={{
             duration: 1000,
@@ -70,6 +78,7 @@ const BarGraph = ({ data }) => {
           style={{
             data: {
               fill: "lightblue",
+              strokeWidth: '0'
             },
           }}
           animate={{

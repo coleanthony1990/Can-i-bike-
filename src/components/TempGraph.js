@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Day from './Day'
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel, VictoryTheme, VictoryStack } from 'victory';
 import '../styles/WeatherCards.css'
 import BarGraph from './BarGraph';
 import WindGraph from './WindGraph';
