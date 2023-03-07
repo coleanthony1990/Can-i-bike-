@@ -10,6 +10,7 @@ const Header = ({getData}) => {
 
   return (
     <div>
+      <h1 className="thing">Can I Bike?</h1>
       <form className='searchbar' onSubmit={handleSubmit}>
         <input className='search' 
                type='text' 

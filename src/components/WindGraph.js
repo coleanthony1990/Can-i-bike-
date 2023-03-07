@@ -3,7 +3,7 @@ import {
   VictoryChart,
   VictoryBar,
   VictoryAxis,
-  VictoryLabel,
+  
   VictoryTheme,
 } from "victory";
 
@@ -14,11 +14,12 @@ const WindGraph = ({ data }) => {
     month: "long",
     day: "numeric",
   };
-  const todayDate = data.length !== 0 ? new Date(data.days[0].datetime) : null;
   const today =
     data.length !== 0
-      ? todayDate.toLocaleDateString("en-US", options)
+      ? new Date(data.days[1].datetime).toLocaleDateString("en-US", options)
       : "Loading";
+
+      console.log(new Date('2023-03-06').toLocaleString('en-US', { timeZone: 'UTC' }))
 
   const windData =
     data.length !== 0
@@ -33,13 +34,16 @@ const WindGraph = ({ data }) => {
 
   return (
     <div>
-      <p className="wind">Wind on {today}</p>
+      {data.length !== 0 && <p className="wind">Wind on {today}</p>}
 
-      <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
         <VictoryAxis dependentAxis tickFormat={(y) => `${y}mph`} />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
+          style={{
+            grid: { strokeWidth: 0.0 },
+          }}
         />
 
         {data.length !== 0 && <VictoryBar
@@ -51,7 +55,7 @@ const WindGraph = ({ data }) => {
             onLoad: { duration: 1000 }
           }}
         />}
-      </VictoryChart>
+      </VictoryChart>}
     </div>
   );
 };
