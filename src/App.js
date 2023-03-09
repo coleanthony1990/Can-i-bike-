@@ -5,6 +5,7 @@ import Graphs from "./containers/Graphs";
 
 function App() {
   const [data, setData] = useState([]);
+  const [newLocation, SetNewLocation] = useState(false)
 
   const [userLocation, setUserLocation] = useState({});
   console.log(userLocation)
@@ -27,6 +28,7 @@ function App() {
   }, [userLocation]);
 
   const getData = (location) => {
+    SetNewLocation(true)
     fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=4W7R6KHFXTA5YECCKYQH63LN5`
     )
@@ -37,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header getData={getData} />
-      <Graphs data={data} />
+      <Graphs data={data} newLocation={newLocation}/>
     </div>
   );
 }
