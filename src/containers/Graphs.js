@@ -10,10 +10,10 @@ import Line from "../components/Line.js";
 
 
 const Graphs = ({ data, newLocation }) => {
-  const timezone =
-    data.length !== 0 ? `Weather in ${data.timezone.split("/")[1]}` : null;
+  // const timezone =
+  //   data.length !== 0 ? `Weather in ${data.timezone.split("/")[1]}` : null;
   return (
-    <div className="weather-page">
+    <div className="weather-page">2
       {newLocation === true && <p>{data.resolvedAddress}</p>}
 
       {data.length === 0 && <p>Loading...</p>}
@@ -25,6 +25,7 @@ const Graphs = ({ data, newLocation }) => {
           <Route exact path="/15days">
             <BarGraph data={data} />
             <Line data={data}/>
+            <br/>
             <TempGraph data={data} />
             
             </Route>
