@@ -19,8 +19,6 @@ const WindGraph = ({ data }) => {
       ? new Date(data.days[1].datetime).toLocaleDateString("en-US", options)
       : "Loading";
 
-      console.log(new Date('2023-03-06').toLocaleString('en-US', { timeZone: 'UTC' }))
-
   const windData =
     data.length !== 0
       ? data.days[0].hours.slice(5, 20).reduce((acc, hour) => {
