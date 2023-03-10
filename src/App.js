@@ -6,7 +6,7 @@ import Graphs from "./containers/Graphs";
 function App() {
   const [data, setData] = useState([]);
   const [newLocation, SetNewLocation] = useState(false)
-
+  const [city, setCity] = useState('')
   const [userLocation, setUserLocation] = useState({});
   console.log(userLocation)
 
@@ -25,6 +25,16 @@ function App() {
         .then((res) => setData(res))
         .catch((error) => console.log(error));
     }
+    if (userLocation) {
+      fetch(
+       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${userLocation.latitude}&longitude=${userLocation.longitude}&localityLanguage=en`
+      )
+      .then(res => res.json())
+      .then(res => setCity(res))
+      .catch((error) => console.log(error))
+    }
+
+
   }, [userLocation]);
 
   const getData = (location) => {
@@ -36,10 +46,13 @@ function App() {
       .then((res) => setData(res))
       .catch((error) => console.log(error));
   };
+
+
+
   return (
     <div className="App">
       <Header getData={getData} />
-      <Graphs data={data} newLocation={newLocation}/>
+      <Graphs data={data} newLocation={newLocation} city={city}/>
     </div>
   );
 }

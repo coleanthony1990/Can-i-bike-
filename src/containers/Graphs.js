@@ -9,13 +9,15 @@ import Current from "../components/Current";
 import Line from "../components/Line.js";
 
 
-const Graphs = ({ data, newLocation }) => {
+const Graphs = ({ data, newLocation, city }) => {
+  console.log(city)
   // const timezone =
   //   data.length !== 0 ? `Weather in ${data.timezone.split("/")[1]}` : null;
+  const cityName = data.length !== 0 && newLocation === false ? `Weather in ${city.locality}` : null
   return (
-    <div className="weather-page">2
+    <div className="weather-page">
       {newLocation === true && <p>{data.resolvedAddress}</p>}
-
+      {cityName}
       {data.length === 0 && <p>Loading...</p>}
       <div className="chartsContainer">
         <Switch>
