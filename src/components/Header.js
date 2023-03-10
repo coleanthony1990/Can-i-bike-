@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Header = ({getData}) => {
   const [location, setLocation] = useState('')
@@ -10,7 +11,7 @@ const Header = ({getData}) => {
 
   return (
     <div>
-      <h1 className="thing">Can I Bike?</h1>
+      <NavLink to='/' style={{textDecoration: 'none', color: 'black'}} ><h1 className="thing">Can I Bike?</h1></NavLink>
       <form className='searchbar' onSubmit={handleSubmit}>
         <input className='search' 
                type='text' 
@@ -19,6 +20,11 @@ const Header = ({getData}) => {
         </input>
         <button type='submit' className='submit-button'>GO</button>
       </form>
+      <nav className='when-buttons'>
+        <NavLink to='today' style={{textDecoration: 'none', color: 'black'}}><button className='display-button'>Today</button></NavLink>
+       
+        <NavLink to='15days' style={{textDecoration: 'none', color: 'black'}}><button className='display-button'>Next 2 weeks</button></NavLink>
+      </nav>
     </div>
   )
 }
