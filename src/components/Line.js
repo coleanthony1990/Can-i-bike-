@@ -26,8 +26,17 @@ const Line = ({ data }) => {
       <p>Windspeed for the next 2 weeks</p>
       <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
         <VictoryAxis dependentAxis />
-        <VictoryAxis tickLabelComponent={<VictoryLabel angle={45} />} />
-        <VictoryLine data={wind} />
+        <VictoryAxis tickLabelComponent={<VictoryLabel angle={90}/>} style={{
+            grid: {strokeWidth: 0.0 },
+            
+          }}
+          />
+        <VictoryLine data={wind} 
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 500 },
+          }} 
+          />
       </VictoryChart>
     </div>
   );

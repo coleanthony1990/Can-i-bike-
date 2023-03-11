@@ -25,9 +25,11 @@ const Graphs = ({ data, newLocation, city }) => {
             <Current data={data} />
           </Route>
           <Route exact path="/15days">
+            <div className="twoweeks">
             <BarGraph data={data} />
             <Line data={data}/>
-            <br/>
+            </div>
+            
             <TempGraph data={data} />
             
             </Route>

@@ -9,12 +9,12 @@
   
   margin: 10px;
 }
-.chartsContainer {
+/* .chartsContainer {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
 .high {
   border: 1px solid black;
@@ -33,4 +33,9 @@
 }
 .wind {
   margin-bottom: -20px;
+}
+.twoweeks {
+  display: flex;
+  justify-content: center;
+  margin: 5vh;
 }
