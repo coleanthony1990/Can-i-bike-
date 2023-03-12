@@ -23,10 +23,10 @@ const Line = ({ data }) => {
 
   return (
     <div>
-      <p>Windspeed for the next 2 weeks</p>
-      <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
+      {data.length !== 0 && <p>Windspeed for the next 2 weeks</p>}
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
         <VictoryAxis dependentAxis />
-        <VictoryAxis tickLabelComponent={<VictoryLabel angle={90}/>} style={{
+        <VictoryAxis tickLabelComponent={<VictoryLabel angle={45}/>} style={{
             grid: {strokeWidth: 0.0 },
             
           }}
@@ -34,10 +34,10 @@ const Line = ({ data }) => {
         <VictoryLine data={wind} 
           animate={{
             duration: 1000,
-            onLoad: { duration: 500 },
+            onLoad: { duration: 1000 },
           }} 
           />
-      </VictoryChart>
+      </VictoryChart>}
     </div>
   );
 };
