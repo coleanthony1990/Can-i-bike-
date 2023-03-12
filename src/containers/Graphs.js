@@ -9,6 +9,7 @@ import Current from "../components/Current";
 import Line from "../components/Line.js";
 
 
+
 const Graphs = ({ data, newLocation, city }) => {
   console.log(city)
   // const timezone =
@@ -25,16 +26,21 @@ const Graphs = ({ data, newLocation, city }) => {
             <Current data={data} />
           </Route>
           <Route exact path="/15days">
+            <div className="twoweeks">
             <BarGraph data={data} />
             <Line data={data}/>
-            <br/>
+            </div>
+            
             <TempGraph data={data} />
             
             </Route>
 
           <Route exact path="/today">
+            <div className="oneday">
+              
             <WindGraph data={data} />
             <LineGraph data={data} />
+            </div>
           </Route>
         </Switch>
       </div>
