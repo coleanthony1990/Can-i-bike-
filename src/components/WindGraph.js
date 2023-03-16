@@ -3,21 +3,11 @@ import {
   VictoryChart,
   VictoryBar,
   VictoryAxis,
-  
+  VictoryLabel,
   VictoryTheme,
 } from "victory";
 
 const WindGraph = ({ data }) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const today =
-    data.length !== 0
-      ? new Date(data.days[1].datetime).toLocaleDateString("en-US", options)
-      : "Loading";
 
   const windData =
     data.length !== 0
@@ -32,9 +22,14 @@ const WindGraph = ({ data }) => {
 
   return (
     <div>
-      {data.length !== 0 && <p className="wind">Wind on {today}</p>}
 
       {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
+      <VictoryLabel
+        x={180}
+        y={5}
+        textAnchor="middle"
+        text="Wind Today"
+      />
         <VictoryAxis dependentAxis tickFormat={(y) => `${y}mph`} />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}

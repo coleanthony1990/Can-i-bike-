@@ -23,8 +23,13 @@ const Line = ({ data }) => {
 
   return (
     <div>
-      {data.length !== 0 && <p>Windspeed for the next 2 weeks</p>}
       {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
+      <VictoryLabel
+        x={180}
+        y={5}
+        textAnchor="middle"
+        text="Windspeed for the next 2 weeks"
+      />
         <VictoryAxis dependentAxis />
         <VictoryAxis tickLabelComponent={<VictoryLabel angle={45}/>} style={{
             grid: {strokeWidth: 0.0 },

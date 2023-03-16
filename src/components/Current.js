@@ -3,6 +3,8 @@ import {FiWind, FiClock} from 'react-icons/fi'
 import {BsThermometerHalf, BsDropletHalf} from 'react-icons/bs'
 import {ImCloud} from 'react-icons/im'
 import {IoRainySharp} from 'react-icons/io5'
+import '../styles/current.css'
+
 
 
 
@@ -18,16 +20,16 @@ const Current = ({data}) => {
   const cloudcover = data.length !== 0 ? ` ${data.currentConditions.cloudcover}%` : null
 
   return (
-    <div>
+    <div className='current-container'>
       {/* {data.length !== 0 && <p>Right now in {bigData.timezone.split('/')[1]}</p>} */}
       {data.length !== 0 && <p className='time'><FiClock/> {data.currentConditions.datetime}</p>}
       <div className='conditions-data'>
-      <p className='temp'><BsThermometerHalf/>Current temperature: {temp}</p>
-      <p className='feelslike'><BsThermometerHalf/>Feels like: {feelslike}</p>
-      <p className='temp'><BsDropletHalf/>{humidity}</p>
-      <p className='temp'><IoRainySharp/> {precip}</p>
-      <p className='temp'><FiWind/>{windSpeed}</p>
-      <p className='temp'><ImCloud/>{cloudcover}</p>
+        <p className='temp'><BsThermometerHalf/>Current temperature: {temp}</p>
+        <p className='temp'><BsThermometerHalf/>Feels like: {feelslike}</p>
+        <p className='temp'><BsDropletHalf/>{humidity}</p>
+        <p className='temp'><IoRainySharp/> {precip}</p>
+        <p className='temp'><FiWind/>{windSpeed}</p>
+        <p className='temp'><ImCloud/>{cloudcover}</p>
       
       </div>
     </div>

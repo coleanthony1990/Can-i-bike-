@@ -5,7 +5,7 @@ import {
   VictoryAxis,
   VictoryLabel,
   VictoryTheme,
-  VictoryVoronoiContainer
+  VictoryLegend
 } from "victory";
 
 const BarGraph = ({ data }) => {
@@ -42,19 +42,22 @@ const BarGraph = ({ data }) => {
 
   return (
     <div>
-     {data.length !== 0 &&  <p>Next 15 days</p>}
-     {data.length !== 0 && <div className="legend">
-        <p className="high">high</p>
-        <p className="low">low</p>
-      </div>}
-      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={20} containerComponent={
-        <VictoryVoronoiContainer
-          style={{}}
-          labels={({ datum }) =>
-            datum.y > 0 ? ` high of ${datum.y} ` : null
-          }
-        />
-      }>
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={20} >
+      <VictoryLabel
+        x={180}
+        y={5}
+        textAnchor="middle"
+        text="Highs and Lows"
+      />
+      <VictoryLegend x={120} y={20}
+    orientation="horizontal"
+    gutter={20}
+    style={{ border: { stroke: "black" }, title: {fontSize: 20 } }}
+    data={[
+      { name: "Low", symbol: { fill: "lightblue"} },
+      { name: "High", symbol: { fill: "orange" } }
+    ]}
+  />
         <VictoryAxis tickLabelComponent={<VictoryLabel angle={55} domainPadding={10}/>} style={{
             grid: {strokeWidth: 0.0 },
           }}/>

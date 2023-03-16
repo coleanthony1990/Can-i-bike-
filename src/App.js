@@ -11,13 +11,15 @@ function App() {
   console.log(userLocation)
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition((position) => {
       setUserLocation(position.coords);
+      console.log(position);
     });
   }, []);
 
   useEffect(() => {
     if (userLocation) {
+      console.log(userLocation)
       fetch(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation.latitude},${userLocation.longitude}?key=4W7R6KHFXTA5YECCKYQH63LN5`
       )

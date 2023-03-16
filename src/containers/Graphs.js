@@ -7,11 +7,12 @@ import LineGraph from "../components/LineGraph";
 import { Switch, Route } from "react-router-dom";
 import Current from "../components/Current";
 import Line from "../components/Line.js";
+import ProgressBar from "../components/ProgressBar";
 
 
 
 const Graphs = ({ data, newLocation, city }) => {
-  console.log(city)
+  
   // const timezone =
   //   data.length !== 0 ? `Weather in ${data.timezone.split("/")[1]}` : null;
   const cityName = data.length !== 0 && newLocation === false ? `Weather in ${city.locality}` : null
@@ -37,7 +38,7 @@ const Graphs = ({ data, newLocation, city }) => {
 
           <Route exact path="/today">
             <div className="oneday">
-              
+            <ProgressBar data={data}/>
             <WindGraph data={data} />
             <LineGraph data={data} />
             </div>
