@@ -32,7 +32,7 @@ const LineGraph = ({ data }) => {
         x={180}
         y={5}
         textAnchor="middle"
-        text="High Today"
+        text="Temperature Today"
       />
         <VictoryAxis
           dependentAxis

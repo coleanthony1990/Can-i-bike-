@@ -9,7 +9,6 @@ import {
 } from "victory";
 
 const BarGraph = ({ data }) => {
-
   
   const lowDataCandle =
     data.length !== 0
@@ -47,7 +46,7 @@ const BarGraph = ({ data }) => {
         x={180}
         y={5}
         textAnchor="middle"
-        text="Highs and Lows"
+        text="Temperature"
       />
       <VictoryLegend x={120} y={20}
     orientation="horizontal"

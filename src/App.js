@@ -8,6 +8,7 @@ function App() {
   const [newLocation, SetNewLocation] = useState(false)
   const [city, setCity] = useState('')
   const [userLocation, setUserLocation] = useState({});
+  const [areaName, setAreaName] = useState('')
   console.log(userLocation)
 
   useEffect(() => {
@@ -53,8 +54,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header getData={getData} />
-      <Graphs data={data} newLocation={newLocation} city={city}/>
+      <Header getData={getData} areaName={setAreaName}/>
+      <Graphs data={data} newLocation={newLocation} city={city} areaName={areaName}/>
     </div>
   );
 }
