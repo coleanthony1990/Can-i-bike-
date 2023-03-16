@@ -3,21 +3,11 @@ import {
   VictoryChart,
   VictoryLine,
   VictoryAxis,
-  
+  VictoryLabel,
   VictoryTheme,
 } from "victory";
 
 const LineGraph = ({ data }) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const today =
-    data.length !== 0
-      ? new Date(data.days[1].datetime).toLocaleDateString("en-US", options)
-      : "Loading";
 
   const tempData =
     data.length !== 0
@@ -32,22 +22,22 @@ const LineGraph = ({ data }) => {
   console.log(tempData);
   return (
     <div>
-        {data.length !== 0 && <p>High on {today}</p>}
+        
         {data.length !== 0 && <VictoryChart
         theme={VictoryTheme.material}
         domainPadding={{ x: 1, y: 20 }}
-        style={{
-          background: {
-            fill: "lightyellow",
-          },
-        }}
+
       >
+        <VictoryLabel
+        x={180}
+        y={5}
+        textAnchor="middle"
+        text="Temperature Today"
+      />
         <VictoryAxis
           dependentAxis
           tickFormat={(y) => `${y}\u00B0F`}
-          style={{
-            grid: { strokeWidth: 0.0 },
-          }}
+         
         />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}

@@ -8,16 +8,19 @@ function App() {
   const [newLocation, SetNewLocation] = useState(false)
   const [city, setCity] = useState('')
   const [userLocation, setUserLocation] = useState({});
+  const [areaName, setAreaName] = useState('')
   console.log(userLocation)
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition((position) => {
       setUserLocation(position.coords);
+      console.log(position);
     });
   }, []);
 
   useEffect(() => {
     if (userLocation) {
+      console.log(userLocation)
       fetch(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${userLocation.latitude},${userLocation.longitude}?key=4W7R6KHFXTA5YECCKYQH63LN5`
       )
@@ -51,8 +54,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header getData={getData} />
-      <Graphs data={data} newLocation={newLocation} city={city}/>
+      <Header getData={getData} areaName={setAreaName}/>
+      <Graphs data={data} newLocation={newLocation} city={city} areaName={areaName}/>
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.conditions-data {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(246, 248, 248);
+  
+}
+.temp {
+  margin: 20px;
+  
+  
+}

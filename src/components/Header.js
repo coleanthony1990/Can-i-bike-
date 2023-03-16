@@ -1,30 +1,37 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import {BiSearch} from 'react-icons/bi'
+import {FaSearch} from 'react-icons/fa'
 
-const Header = ({getData}) => {
+const Header = ({getData, areaName}) => {
   const [location, setLocation] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
     getData(location)
+    setLocation('')
+    areaName(location)
   }
 
   return (
     <div className='header'>
       <NavLink to='/' style={{textDecoration: 'none', color: 'black'}} ><h1 className="thing">Can I Bike?</h1></NavLink>
-      <form className='searchbar' onSubmit={handleSubmit}>
-        <input className='search' 
+      <div className='searchbar'>
+      <form className='search-box' onSubmit={handleSubmit}>
+      <button type='submit' className='btn-search'><FaSearch/></button>
+        <input className='input-search' 
                type='text' 
-               placeholder='enter location' 
+               placeholder='Enter Location' 
+               value={location}
                onChange={(event) => setLocation(event.target.value)}>
         </input>
-        <button type='submit' className='submit-button'>go</button>
+        
       </form>
+      </div>
       <nav className='when-buttons'>
-        <NavLink to='today' style={{textDecoration: 'none', color: 'black'}}><button className='button-17'>Today</button></NavLink>
+      <NavLink to='/' style={{textDecoration: 'none', color: 'black'}}><button className='button-17'>Current Conditions</button></NavLink>
+        <NavLink to='/today' style={{textDecoration: 'none', color: 'black'}}><button className='button-17'>Today</button></NavLink>
        
-        <NavLink to='15days' style={{textDecoration: 'none', color: 'black'}}><button className='button-17'>Next 2 weeks</button></NavLink>
+        <NavLink to='/15days' style={{textDecoration: 'none', color: 'black'}}><button className='button-17'>2 weeks</button></NavLink>
       </nav>
     </div>
   )
