@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
 
 .App {
   text-align: center;
@@ -14,8 +16,7 @@
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: 14px;
+  font-family: 'Amiko', sans-serif;  font-size: 14px;
   font-weight: 500;
   height: 48px;
   justify-content: center;
@@ -34,7 +35,7 @@
   width: auto;
   will-change: transform,opacity;
   z-index: 0;
-  margin: 20px
+  margin: 10px
 }
 
 .button-17:hover {
@@ -71,20 +72,7 @@
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
-/* .search {
-  border-radius: 5px 0 0 5px;
-  border: none;
-  box-shadow: 0 4px 4px -2px gray;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-}
-.submit-button {
-  border-radius: 0 5px 5px 0;
-  border: none;
-  box-shadow: 0 4px 4px -2px gray;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-  background-color: #e5e8ed;
-  align-content: center;
-} */
+
 .searchbar {
   display: flex;
   justify-content: center;
@@ -95,64 +83,11 @@
   height: fit-content;
   position: relative;
 }
-/*
-.input-search{
-  height: 40px;
-  width: 1px;
-  border-style: none;
-  font-size: 18px;
-  letter-spacing: 2px;
-  outline: none;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
-  background-color: black;
-  padding-right: 40px;
-  color:#fff;
-}
-.input-search::placeholder{
-  color:white;
-  font-size: 12px;
-  letter-spacing: 2px;
-  font-weight: 100;
-  margin-left: 12px;
-}
 
-.btn-search{
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  font-size: 15px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  right: -3px;
-  top: -2px;
-  color:#ffffff ;
-  background-color:transparent;
-  pointer-events: painted;  
-}
-.btn-search:focus ~ .input-search{
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  
-}
-.input-search:focus{
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  
-} */
 .input-search {
   background-color: transparent;
   border: none;
-  border-bottom:2px solid rgba(255,255,255,.5);
+  border-bottom: 2px solid rgba(255,255,255,.5);
   width: 300px;
   color:#fff;
 }
@@ -165,9 +100,11 @@
 }
 .input-search::placeholder {
   color: rgba(255,255,255,.5);
+  font-family: 'Amiko', sans-serif;
 }
 .input-search:focus {
   outline: none;
+  font-family: 'Amiko', sans-serif;
 }
 
 .header {
@@ -177,13 +114,21 @@
   width: 100%;
   z-index: 100;
 }
-.thing {
+.title {
   margin-top: 0px;
-  color: #F6F9FE;
+  color: #d7dfec;
+  font-family: 'BioRhyme Expanded', serif;
 }
 .weather-page {
 padding-top: 250px;
+font-family: 'Amiko', sans-serif;
 }
+@media (max-width: 500px) {
+  .title {
+    font-size: 6vw;
+  }
+}
+
 .two-line {
   width: 25rem;
 }
@@ -198,5 +143,8 @@ padding-top: 250px;
 }
 .todayWind {
   width: 20rem;
+}
+.cloud {
+  padding-right: 10px;
 }
 

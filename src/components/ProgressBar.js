@@ -6,10 +6,11 @@ const ProgressBar = ({data}) => {
   let percent = data.length !== 0 ? data.days[0].precipprob : null
   
  let chartData = data.length !== 0 ? {
-  percent: data.days[0].precipprob, data: [{ x: 1, y: percent }, { x: 2, y: 100 - percent }]
+  percent: percent, data: [{ x: 1, y: percent }, { x: 2, y: 100 - percent }]
 } : null
+console.log(percent)
+console.log(chartData)
 
-  console.log(percent)
   
     return (
       <div className='rainChance'>
@@ -22,7 +23,7 @@ const ProgressBar = ({data}) => {
       />
           <VictoryPie
             standalone={false}
-            // animate={{ duration: 1000 }}
+            // animate={{ duration: 1000, onLoad: 1000 }}
             width={400} height={400}
             data={chartData.data}
             innerRadius={132}
@@ -37,6 +38,7 @@ const ProgressBar = ({data}) => {
           />
           <VictoryAnimation duration={1000} data={chartData}>
             {(newProps) => {
+              // console.log(newProps)
               
               return (
                 <VictoryLabel

@@ -63,12 +63,12 @@ const BarGraph = ({ data }) => {
         <VictoryAxis
           dependentAxis
           // tickFormat specifies how ticks should be displayed
-          tickFormat={(x) => `${x}\u00B0F`}
+          // tickFormat={(x) => `${x}\u00B0F`}
           
         />
 
         <VictoryCandlestick
-          // candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
+          
           data={highDataCandle}
           style={{
             data: {
@@ -77,13 +77,13 @@ const BarGraph = ({ data }) => {
             },
             
           }}
-          // animate={{
-          //   duration: 1000,
-          //   onLoad: { duration: 500 },
-          // }}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 500 },
+          }}
         />
         <VictoryCandlestick
-          // candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
+          
           data={lowDataCandle}
           style={{
             data: {
@@ -91,10 +91,10 @@ const BarGraph = ({ data }) => {
               strokeWidth: '0'
             },
           }}
-          // animate={{
-          //   duration: 1000,
-          //   onLoad: { duration: 500 },
-          // }}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 500 },
+          }}
         />
       </VictoryChart>}
     </div>

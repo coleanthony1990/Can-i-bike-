@@ -23,7 +23,10 @@ const Line = ({ data }) => {
 
   return (
     <div className="two-line">
-      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={0} animate={{
+          duration: 2000,
+          onLoad: { duration: 200 }
+        }}>
       <VictoryLabel
         x={180}
         y={5}

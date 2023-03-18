@@ -28,13 +28,13 @@ const Current = ({data}) => {
       <div className='conditions-data'>
         <p className='temp'><BsThermometerHalf/>Current temperature: {temp}</p>
         <p className='temp'><BsThermometerHalf/>Feels like: {feelslike}</p>
-        <p className='temp'><BsDropletHalf/>{humidity}</p>
-        <p className='temp'><IoRainySharp/> {precip}</p>
-        <p className='temp'><FiWind/>{windSpeed}</p>
-        <p className='temp'><ImCloud/>{cloudcover}</p>
+        <p className='temp'><BsDropletHalf/>Humidity: {humidity}</p>
+        <p className='temp'><IoRainySharp/>Precipitation: {precip}</p>
+        <p className='temp'><FiWind/>Windspeed: {windSpeed}</p>
+        <p className='temp cloud'><ImCloud/>Cloud Cover: {cloudcover}</p>
       
       </div>
-      <p>{determination}</p>
+      {data.length !== 0 && <p>{determination}</p>}
     </div>
   )
 }
