@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+
 .card-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  overflow-x: scroll;
+
 }
 .weather-card {
-  border: 1px solid black;
-  width: 20rem;
+  border: none;
+  width: 25rem;
+  padding: 0 3rem 0 3rem;
   
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   margin: 10px;
+  font-family: 'Shrikhand', cursive;
 }
 /* .chartsContainer {
   display: flex;
@@ -46,4 +53,5 @@
   margin: 5vh;
   flex-wrap: wrap;
 }
+
 

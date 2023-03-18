@@ -2,22 +2,33 @@ import React from 'react'
 import '../styles/WeatherCards.css'
 import bike from '../assets/bike.png'
 import nobike from '../assets/nobike.png'
+import puffer from '../assets/puffer.png'
+import lightJacket from '../assets/light-jacket.png'
 
 const Day = ({high, conditions, date, icon}) => {
-  const bikeDecision = high > 40 
-  && (!conditions.includes('Snow') 
-  || !conditions.includes('Rain') 
-  || conditions.includes('Wind') )
-  ? bike : nobike
+  console.log(typeof high)
+  const bikeDecision =
+  conditions.includes('Rain' || 'Snow' || 'Wind')  
+ 
+  ? nobike : bike
 
+  const jacket = () => {
+    if (high > 60) {
+      return null
+    } else if (high >50) {
+      return lightJacket
+    } else return puffer
+  }
+  console.log(jacket())
 
-  
+  const yesJacket = jacket() === null ? null : <img src={jacket()} alt='jacket determination'/>
   
   return (
     <div className='weather-card'>
       <h3>{date}</h3>
-      <p>high of {high} and {conditions}</p>
+      <p>High of {high} and {conditions}</p>
       <img src={bikeDecision} alt='somethin'/>
+      {yesJacket}
     </div>
   )
 }

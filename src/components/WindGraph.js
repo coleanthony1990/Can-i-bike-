@@ -21,7 +21,7 @@ const WindGraph = ({ data }) => {
       : null;
 
   return (
-    <div>
+    <div className="todayWind">
 
       {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
       <VictoryLabel
@@ -43,10 +43,7 @@ const WindGraph = ({ data }) => {
           data={windData}
           x="time"
           y="windSpeed"
-          animate={{
-            duration: 1000,
-            onLoad: { duration: 1000 }
-          }}
+          
         />}
       </VictoryChart>}
     </div>

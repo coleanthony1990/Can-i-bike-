@@ -184,6 +184,19 @@
 .weather-page {
 padding-top: 250px;
 }
-
-
+.two-line {
+  width: 25rem;
+}
+.candle {
+  width: 25rem;
+}
+.rainChance {
+  width: 17.2rem;
+}
+.todayHigh {
+  width: 20rem;
+}
+.todayWind {
+  width: 20rem;
+}
 
