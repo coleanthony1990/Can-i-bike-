@@ -8,7 +8,7 @@ import {
 } from "victory";
 
 const Line = ({ data }) => {
-  console.log(data);
+  
   const wind =
     data.length !== 0
       ? data.days.reduce((acc, day) => {
@@ -19,7 +19,7 @@ const Line = ({ data }) => {
           return acc;
         }, [])
       : null;
-      console.log(wind)
+      
 
   return (
     <div className="two-line">

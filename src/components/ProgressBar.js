@@ -8,8 +8,7 @@ const ProgressBar = ({data}) => {
  let chartData = data.length !== 0 ? {
   percent: percent, data: [{ x: 1, y: percent }, { x: 2, y: 100 - percent }]
 } : null
-console.log(percent)
-console.log(chartData)
+
 
   
     return (
