@@ -6,7 +6,7 @@ import puffer from '../assets/puffer.png'
 import lightJacket from '../assets/light-jacket.png'
 
 const Day = ({high, conditions, date, icon}) => {
-  console.log(typeof high)
+  
   const bikeDecision =
   conditions.includes('Rain' || 'Snow' || 'Wind')  
  
@@ -19,7 +19,7 @@ const Day = ({high, conditions, date, icon}) => {
       return lightJacket
     } else return puffer
   }
-  console.log(jacket())
+  
 
   const yesJacket = jacket() === null ? null : <img src={jacket()} alt='jacket determination'/>
   

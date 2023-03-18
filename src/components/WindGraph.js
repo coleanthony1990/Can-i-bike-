@@ -44,13 +44,13 @@ const WindGraph = ({ data }) => {
           }}
         />
 
-        {data.length !== 0 && <VictoryBar
+        <VictoryBar
           data={windData}
           x="time"
           y="windSpeed"
 
           
-        />}
+        />
       </VictoryChart>}
     </div>
   );

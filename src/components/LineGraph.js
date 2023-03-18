@@ -5,6 +5,7 @@ import {
   VictoryAxis,
   VictoryLabel,
   VictoryTheme,
+  VictoryLegend
 } from "victory";
 
 const LineGraph = ({ data }) => {
@@ -19,7 +20,17 @@ const LineGraph = ({ data }) => {
           return acc;
         }, [])
       : null;
-  console.log(tempData);
+
+  const feelsLikeData = data.length !== 0
+  ? data.days[0].hours.slice(4, 21).reduce((acc, hour) => {
+      acc.push({
+        x: Number(hour.datetime.slice(0, 2)),
+        y: Math.round(hour.feelslike),
+      });
+      return acc;
+    }, [])
+  : null;
+  
   return (
     <div className='todayHigh'>
         
@@ -38,6 +49,15 @@ const LineGraph = ({ data }) => {
         textAnchor="middle"
         text="Temperature Today"
       />
+       <VictoryLegend x={100} y={20}
+    orientation="horizontal"
+    gutter={20}
+    style={{ border: { stroke: "black" }, title: {fontSize: 20 } }}
+    data={[
+      { name: "Actual", symbol: { fill: "#2f8732"} },
+      { name: "Feels Like", symbol: { fill: "#812f87" } }
+    ]}
+  />
         <VictoryAxis
           dependentAxis
           // tickFormat={(y) => `${y}\u00B0F`}
@@ -50,15 +70,26 @@ const LineGraph = ({ data }) => {
             grid: { strokeWidth: 0.0 },
           }}
         />
-        {data.length !== 0 && (
+        
           <VictoryLine
             data={tempData}
             // animate={{
             //   duration: 2000,
             //   onLoad: { duration: 1000 },
             // }}
+            style={{
+              data: { stroke: "#2f8732" },
+              
+            }}
           />
-        )}
+          <VictoryLine data={feelsLikeData}
+          style={{
+            data: { stroke: "#812f87" },
+            
+          }}
+          
+          />
+          
       </VictoryChart>}
     </div>
   );
