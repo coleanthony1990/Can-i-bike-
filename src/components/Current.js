@@ -31,7 +31,7 @@ const Current = ({data}) => {
         <p className='temp'><BsDropletHalf/>Humidity: {humidity}</p>
         <p className='temp'><IoRainySharp/>Precipitation: {precip}</p>
         <p className='temp'><FiWind/>Windspeed: {windSpeed}</p>
-        <p className='temp'><ImCloud/>Cloud Cover: {cloudcover}</p>
+        <p className='temp cloud'><ImCloud/>Cloud Cover: {cloudcover}</p>
       
       </div>
       {data.length !== 0 && <p>{determination}</p>}
