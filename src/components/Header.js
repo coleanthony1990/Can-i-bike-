@@ -14,7 +14,7 @@ const Header = ({getData, areaName}) => {
 
   return (
     <div className='header'>
-      <NavLink to='/' style={{textDecoration: 'none', color: 'black'}} ><h1 className="thing">Can I Bike?</h1></NavLink>
+      <NavLink to='/' style={{textDecoration: 'none', color: 'black'}} ><h1 className="title">BikeDay</h1></NavLink>
       <div className='searchbar'>
       <form className='search-box' onSubmit={handleSubmit}>
       <button type='submit' className='btn-search'><FaSearch/></button>
