@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
 
 
 .card-container {
@@ -14,7 +14,8 @@
   
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   margin: 10px;
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Amiko', sans-serif;  font-size: 14px;
+
 }
 
 .high {
