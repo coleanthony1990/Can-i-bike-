@@ -26,7 +26,11 @@ const LineGraph = ({ data }) => {
         {data.length !== 0 && <VictoryChart
         theme={VictoryTheme.material}
         domainPadding={{ x: 1, y: 20 }}
-
+        animate={{
+          duration: 2000,
+          onLoad: { duration: 200 }
+        }}
+        
       >
         <VictoryLabel
         x={180}
@@ -36,7 +40,7 @@ const LineGraph = ({ data }) => {
       />
         <VictoryAxis
           dependentAxis
-          tickFormat={(y) => `${y}\u00B0F`}
+          // tickFormat={(y) => `${y}\u00B0F`}
          
         />
         <VictoryAxis

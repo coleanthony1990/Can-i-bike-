@@ -23,14 +23,19 @@ const WindGraph = ({ data }) => {
   return (
     <div className="todayWind">
 
-      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }}>
+      {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 5, y: 5 }} animate={{
+          duration: 2000,
+          onLoad: { duration: 200 }
+        }}>
       <VictoryLabel
         x={180}
         y={5}
         textAnchor="middle"
         text="Wind Today"
       />
-        <VictoryAxis dependentAxis tickFormat={(y) => `${y}mph`} />
+        <VictoryAxis dependentAxis 
+        // tickFormat={(y) => `${Math.round(y)}mph`}
+         />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
           tickFormat={["4 A.M", "8 A.M", "Noon", "4 P.M", "8 P.M."]}
@@ -43,6 +48,7 @@ const WindGraph = ({ data }) => {
           data={windData}
           x="time"
           y="windSpeed"
+
           
         />}
       </VictoryChart>}
