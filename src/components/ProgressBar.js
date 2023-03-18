@@ -9,10 +9,10 @@ const ProgressBar = ({data}) => {
   percent: data.days[0].precipprob, data: [{ x: 1, y: percent }, { x: 2, y: 100 - percent }]
 } : null
 
-
+  console.log(percent)
   
     return (
-      <div>
+      <div className='rainChance'>
         {data.length !== 0 && <svg viewBox="40 0 350 400" width="100%" height="100%">
         <VictoryLabel
         x={200}
@@ -22,7 +22,7 @@ const ProgressBar = ({data}) => {
       />
           <VictoryPie
             standalone={false}
-            animate={{ duration: 1000 }}
+            // animate={{ duration: 1000 }}
             width={400} height={400}
             data={chartData.data}
             innerRadius={132}

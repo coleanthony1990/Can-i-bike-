@@ -11,7 +11,7 @@ import ProgressBar from "../components/ProgressBar";
 
 
 
-const Graphs = ({ data, newLocation, city, areaName }) => {
+const Graphs = ({ data, newLocation, city, areaName}) => {
   
   
   // const timezone =
@@ -20,6 +20,8 @@ const Graphs = ({ data, newLocation, city, areaName }) => {
   const altLanguage = data.length !== 0 && alphabet.includes(data.resolvedAddress[1]) ? null : `(${areaName.charAt(0).toUpperCase()}${areaName.slice(1)})`
   
   const cityName = data.length !== 0 && newLocation === false ? `Weather in ${city.locality}` : null
+
+
   return (
     <div className="weather-page">
       {newLocation === true && <p>Weather in {data.resolvedAddress} {altLanguage}</p>}
@@ -43,7 +45,7 @@ const Graphs = ({ data, newLocation, city, areaName }) => {
           <Route exact path="/today">
             <div className="oneday">
             <ProgressBar data={data}/>
-            <WindGraph data={data} />
+            <WindGraph data={data}/>
             <LineGraph data={data} />
             </div>
           </Route>

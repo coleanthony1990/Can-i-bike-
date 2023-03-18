@@ -22,7 +22,7 @@ const Line = ({ data }) => {
       console.log(wind)
 
   return (
-    <div>
+    <div className="two-line">
       {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={0}>
       <VictoryLabel
         x={180}
@@ -37,10 +37,10 @@ const Line = ({ data }) => {
           }}
           />
         <VictoryLine data={wind} 
-          animate={{
-            duration: 1000,
-            onLoad: { duration: 1000 },
-          }} 
+          // animate={{
+          //   duration: 1000,
+          //   onLoad: { duration: 1000 },
+          // }} 
           />
       </VictoryChart>}
     </div>

@@ -40,7 +40,7 @@ const BarGraph = ({ data }) => {
       : null;
 
   return (
-    <div>
+    <div className='candle'>
       {data.length !== 0 && <VictoryChart theme={VictoryTheme.material} domainPadding={20} >
       <VictoryLabel
         x={180}
@@ -77,10 +77,10 @@ const BarGraph = ({ data }) => {
             },
             
           }}
-          animate={{
-            duration: 1000,
-            onLoad: { duration: 500 },
-          }}
+          // animate={{
+          //   duration: 1000,
+          //   onLoad: { duration: 500 },
+          // }}
         />
         <VictoryCandlestick
           // candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
@@ -91,10 +91,10 @@ const BarGraph = ({ data }) => {
               strokeWidth: '0'
             },
           }}
-          animate={{
-            duration: 1000,
-            onLoad: { duration: 500 },
-          }}
+          // animate={{
+          //   duration: 1000,
+          //   onLoad: { duration: 500 },
+          // }}
         />
       </VictoryChart>}
     </div>

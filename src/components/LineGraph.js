@@ -21,7 +21,7 @@ const LineGraph = ({ data }) => {
       : null;
   console.log(tempData);
   return (
-    <div>
+    <div className='todayHigh'>
         
         {data.length !== 0 && <VictoryChart
         theme={VictoryTheme.material}
@@ -49,10 +49,10 @@ const LineGraph = ({ data }) => {
         {data.length !== 0 && (
           <VictoryLine
             data={tempData}
-            animate={{
-              duration: 2000,
-              onLoad: { duration: 1000 },
-            }}
+            // animate={{
+            //   duration: 2000,
+            //   onLoad: { duration: 1000 },
+            // }}
           />
         )}
       </VictoryChart>}

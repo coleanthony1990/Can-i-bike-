@@ -4,7 +4,7 @@ import {BsThermometerHalf, BsDropletHalf} from 'react-icons/bs'
 import {ImCloud} from 'react-icons/im'
 import {IoRainySharp} from 'react-icons/io5'
 import '../styles/current.css'
-
+import { DateTime }  from "luxon";
 
 
 
@@ -18,13 +18,13 @@ const Current = ({data}) => {
   const precip = data.length !== 0 ? ` ${data.days[0].precipprob}%` : null
   const windSpeed = data.length !== 0 ? ` ${data.currentConditions.windspeed} mph` : null
   const cloudcover = data.length !== 0 ? ` ${data.currentConditions.cloudcover}%` : null
-  const determination = data.length !== 0 && data.currentConditions.temp > 40 && (!conditions.includes('Snow') 
-  || !conditions.includes('Rain') 
-  || conditions.includes('Wind') ) ? 'Go for it! You can bike today!' : 'Yikes! I wouldn\'t bike today if I were you!'
+  const time = data.length !== 0 ? DateTime.fromFormat(data.currentConditions.datetime, 'HH:mm:ss').toFormat('h:mm') : null
+  const ampm = data.length !== 0 && Number(data.currentConditions.datetime.slice(0,2)) >= 12 ? 'PM' : 'AM'
+  const determination = data.length !== 0 && !conditions.includes('Rain' || 'Snow' || 'Wind') ? 'Go for it! You should ride a bike today!' : 'Yikes! I wouldn\'t bike today if I were you!'
   return (
     <div className='current-container'>
       {/* {data.length !== 0 && <p>Right now in {bigData.timezone.split('/')[1]}</p>} */}
-      {data.length !== 0 && <p className='time'><FiClock/> {data.currentConditions.datetime}</p>}
+      {data.length !== 0 && <p className='time'><FiClock/> {time} {ampm}</p>}
       <div className='conditions-data'>
         <p className='temp'><BsThermometerHalf/>Current temperature: {temp}</p>
         <p className='temp'><BsThermometerHalf/>Feels like: {feelslike}</p>
