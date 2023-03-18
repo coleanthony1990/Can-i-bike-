@@ -1,9 +1,22 @@
 .conditions-data {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   background-color: rgb(246, 248, 248);
-  
+  width: 100%;
 }
+
+@media (max-width: 450px) {
+  .conditions-data {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-color: rgb(246, 248, 248);
+  width: 100%;
+  overflow-x: scroll;
+  }
+}
+
 .temp {
   margin: 20px;
   

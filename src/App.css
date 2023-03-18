@@ -184,6 +184,12 @@
 .weather-page {
 padding-top: 250px;
 }
+@media (max-width: 500px) {
+  .weather-page {
+    padding-top: 300px;
+  }
+}
+
 .two-line {
   width: 25rem;
 }
