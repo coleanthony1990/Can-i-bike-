@@ -61,7 +61,10 @@ const LineGraph = ({ data }) => {
         <VictoryAxis
           dependentAxis
           // tickFormat={(y) => `${y}\u00B0F`}
-         
+          label="Degrees in Farenheit"
+          style={{
+            axisLabel: {padding: 39}
+          }}
         />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}
@@ -70,7 +73,13 @@ const LineGraph = ({ data }) => {
             grid: { strokeWidth: 0.0 },
           }}
         />
-        
+          <VictoryLine data={feelsLikeData}
+          style={{
+            data: { stroke: "#812f87" },
+            
+          }}
+          
+          />
           <VictoryLine
             data={tempData}
             // animate={{
@@ -82,13 +91,7 @@ const LineGraph = ({ data }) => {
               
             }}
           />
-          <VictoryLine data={feelsLikeData}
-          style={{
-            data: { stroke: "#812f87" },
-            
-          }}
           
-          />
           
       </VictoryChart>}
     </div>

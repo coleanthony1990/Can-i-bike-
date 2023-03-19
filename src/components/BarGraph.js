@@ -64,7 +64,10 @@ const BarGraph = ({ data }) => {
           dependentAxis
           // tickFormat specifies how ticks should be displayed
           // tickFormat={(x) => `${x}\u00B0F`}
-          
+          label="Degrees in Fareheit"
+        style={{
+          axisLabel: {padding: 39}
+        }}
         />
 
         <VictoryCandlestick
