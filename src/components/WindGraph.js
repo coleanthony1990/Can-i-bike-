@@ -9,6 +9,17 @@ import {
 
 const WindGraph = ({ data }) => {
 
+  const sharedAxisStyles = {
+    tickLabels: {
+      fontSize: 13
+    },
+    axisLabel: {
+      padding: 39,
+      fontSize: 13,
+      fontStyle: "italic"
+    }
+  };
+
   const windData =
     data.length !== 0
       ? data.days[0].hours.slice(5, 20).reduce((acc, hour) => {
@@ -35,6 +46,11 @@ const WindGraph = ({ data }) => {
       />
         <VictoryAxis dependentAxis 
         // tickFormat={(y) => `${Math.round(y)}mph`}
+        
+        label="Miles Per Hour"
+        style={{
+          axisLabel: {padding: 39}
+        }}
          />
         <VictoryAxis
           tickValues={[4, 8, 12, 16, 20]}

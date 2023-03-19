@@ -33,7 +33,12 @@ const Line = ({ data }) => {
         textAnchor="middle"
         text="Windspeed for the next 2 weeks"
       />
-        <VictoryAxis dependentAxis />
+        <VictoryAxis dependentAxis 
+        label="Miles Per Hour"
+        style={{
+          axisLabel: {padding: 39}
+        }}
+        />
         <VictoryAxis tickLabelComponent={<VictoryLabel angle={45}/>} style={{
             grid: {strokeWidth: 0.0 },
             
